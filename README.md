@@ -1,5 +1,7 @@
 <!-- badges: start -->
+
 # icare <img src="man/figures/logo.png" align="right" height="139" alt="icare logo" />
+
 <!-- badges: end -->
 
 **I**ntelligent **C**linl**A**bomics **R**esearch **E**xpedition
@@ -34,10 +36,10 @@ survival modeling — each with an interactive Shiny deployment layer.
 - [Installation](#installation)
 - [The four modules](#the-four-modules)
 - [Essential Commands](#essential-commands)
-  - [Module 1 — Data cleaning (`Stat`)](#module-1--data-cleaning-stat)
-  - [Module 2 — Modeling (`Train_Model`)](#module-2--modeling-train_model)
-  - [Module 3 — Subtyping (`Subtyping`)](#module-3--subtyping-subtyping)
-  - [Module 4 — Survival / Prognosis (`PrognosiX`)](#module-4--survival--prognosis-prognosix)
+- [Module 1 — Data cleaning (`Stat`)](#module-1--data-cleaning-stat)
+- [Module 2 — Modeling (`Train_Model`)](#module-2--modeling-train_model)
+- [Module 3 — Subtyping (`Subtyping`)](#module-3--subtyping-subtyping)
+- [Module 4 — Survival / Prognosis (`PrognosiX`)](#module-4--survival--prognosis-prognosix)
 - [Quick start](#quick-start)
 - [Getting help](#getting-help)
 - [Citation](#citation)
@@ -50,7 +52,7 @@ survival modeling — each with an interactive Shiny deployment layer.
 icare organizes an analysis as a pipeline of **S4 objects**, one per stage,
 each produced by converting the previous one with `ConvertObject()`:
 
-```
+```javascript
 raw data.frame
       │  CreateStatObject()
       ▼
@@ -141,9 +143,12 @@ The QUICKSTART chapters get you a result in minutes — the **ADVANCED** chapter
 **Module 1 · Advanced — publication figures**
 
 [![PCA with confidence ellipses, publication style](http://yulab-smu.top/icare/module1-advanced_files/figure-html/module1-advanced-14-1.png)](https://yulab-smu.top/icare/module1-advanced.html)
+[![AUC vs. p-value feature triage](http://yulab-smu.top/icare/module1-advanced_files/figure-html/module1-advanced-17-1.png)](https://yulab-smu.top/icare/module1-advanced.html)
 [![Top-DEG feature heatmap with clinical annotation](http://yulab-smu.top/icare/module1-advanced_files/figure-html/module1-advanced-17-2.png)](https://yulab-smu.top/icare/module1-advanced.html)
+[![Per-feature ROC curves for the top DEGs](http://yulab-smu.top/icare/module1-advanced_files/figure-html/module1-advanced-17-3.png)](https://yulab-smu.top/icare/module1-advanced.html)
+[![Radar chart of group-mean feature shifts](http://yulab-smu.top/icare/module1-advanced_files/figure-html/module1-advanced-17-4.png)](https://yulab-smu.top/icare/module1-advanced.html)
 
-Correlation heatmaps, annotated PCA, AUC/p-value feature triage, radar charts, and a manuscript-ready "Table 1" — all in one script. → [Advanced chapter](https://yulab-smu.top/icare/module1-advanced.html)
+Annotated PCA, AUC/p-value feature triage, annotated heatmaps, per-feature ROCs, radar charts, and a manuscript-ready "Table 1" — all in one script. → [Advanced chapter](https://yulab-smu.top/icare/module1-advanced.html)
 
 </td>
 <td width="50%" valign="top">
@@ -151,9 +156,18 @@ Correlation heatmaps, annotated PCA, AUC/p-value feature triage, radar charts, a
 **Module 2 · Advanced — benchmarking & explainability**
 
 [![RFE feature-selection profile plot](http://yulab-smu.top/icare/module2-advanced_files/figure-html/module2-advanced-15-1.png)](https://yulab-smu.top/icare/module2-advanced.html)
+[![Logistic diagnostic benchmark](http://yulab-smu.top/icare/module2-advanced_files/figure-html/module2-advanced-16-1.png)](https://yulab-smu.top/icare/module2-advanced.html)
+[![Cross-validated training comparison across algorithms](http://yulab-smu.top/icare/module2-advanced_files/figure-html/module2-advanced-18-1.png)](https://yulab-smu.top/icare/module2-advanced.html)
 [![Top model AUC comparison across algorithms](http://yulab-smu.top/icare/module2-advanced_files/figure-html/module2-advanced-19-1.png)](https://yulab-smu.top/icare/module2-advanced.html)
+[![DALEX model-performance profile](http://yulab-smu.top/icare/module2-advanced_files/figure-html/module2-advanced-23-1.png)](https://yulab-smu.top/icare/module2-advanced.html)
+[![Global SHAP beeswarm explanation](http://yulab-smu.top/icare/module2-advanced_files/figure-html/module2-advanced-23-3.png)](https://yulab-smu.top/icare/module2-advanced.html)
+[![Two-model ROC comparison with 95% CI](http://yulab-smu.top/icare/module2-advanced_files/figure-html/module2-advanced-24-47.png)](https://yulab-smu.top/icare/module2-advanced.html)
+[![Integrated Discrimination Improvement (IDI) curve](http://yulab-smu.top/icare/module2-advanced_files/figure-html/module2-advanced-24-48.png)](https://yulab-smu.top/icare/module2-advanced.html)
+[![NRI reclassification heatmap between risk categories](http://yulab-smu.top/icare/module2-advanced_files/figure-html/module2-advanced-24-49.png)](https://yulab-smu.top/icare/module2-advanced.html)
+[![NRI reclassification counts (up / down)](http://yulab-smu.top/icare/module2-advanced_files/figure-html/module2-advanced-24-50.png)](https://yulab-smu.top/icare/module2-advanced.html)
+[![NRI as a function of the risk threshold](http://yulab-smu.top/icare/module2-advanced_files/figure-html/module2-advanced-24-52.png)](https://yulab-smu.top/icare/module2-advanced.html)
 
-RFE/GA/SA consensus feature selection, a 9-algorithm benchmark, ensembling, Bayesian tuning, and SHAP/DALEX explanations. → [Advanced chapter](https://yulab-smu.top/icare/module2-advanced.html)
+RFE/GA/SA consensus feature selection, a 9-algorithm benchmark, ensembling, Bayesian tuning, SHAP/DALEX explanations, decision thresholds, and NRI/IDI reclassification analysis. → [Advanced chapter](https://yulab-smu.top/icare/module2-advanced.html)
 
 </td>
 </tr>
@@ -163,7 +177,10 @@ RFE/GA/SA consensus feature selection, a 9-algorithm benchmark, ensembling, Baye
 **Module 3 · Advanced — three-way clustering validation**
 
 [![K-means and LPA clustering diagnostics](http://yulab-smu.top/icare/module3-advanced_files/figure-html/module3-advanced-13-1.png)](https://yulab-smu.top/icare/module3-advanced.html)
+[![NMF rank estimation](http://yulab-smu.top/icare/module3-advanced_files/figure-html/module3-advanced-14-1.png)](https://yulab-smu.top/icare/module3-advanced.html)
 [![t-SNE embedding colored by LPA subtype](http://yulab-smu.top/icare/module3-advanced_files/figure-html/module3-advanced-19-1.png)](https://yulab-smu.top/icare/module3-advanced.html)
+[![t-SNE embedding colored by clinical outcome](http://yulab-smu.top/icare/module3-advanced_files/figure-html/module3-advanced-19-2.png)](https://yulab-smu.top/icare/module3-advanced.html)
+[![Cross-method agreement (Adjusted Rand Index)](http://yulab-smu.top/icare/module3-advanced_files/figure-html/module3-advanced-21-1.png)](https://yulab-smu.top/icare/module3-advanced.html)
 
 K-means, LPA, and NMF cross-validated against each other (Adjusted Rand Index), with marker heatmaps, silhouettes, and an alluvial agreement diagram. → [Advanced chapter](https://yulab-smu.top/icare/module3-advanced.html)
 
@@ -172,8 +189,13 @@ K-means, LPA, and NMF cross-validated against each other (Adjusted Rand Index), 
 
 **Module 4 · Advanced — robust survival modeling**
 
+[![Survival-learner algorithm benchmark](http://yulab-smu.top/icare/module4-advanced_files/figure-html/module4-advanced-13-1.png)](https://yulab-smu.top/icare/module4-advanced.html)
 [![Kaplan-Meier median-split risk stratification](http://yulab-smu.top/icare/module4-advanced_files/figure-html/module4-advanced-14-1.png)](https://yulab-smu.top/icare/module4-advanced.html)
-[![Feature-selection stability plot across resamples](http://yulab-smu.top/icare/module4-advanced_files/figure-html/module4-advanced-15-1.png)](https://yulab-smu.top/icare/module4-advanced.html)
+[![Kaplan-Meier tertile risk stratification](http://yulab-smu.top/icare/module4-advanced_files/figure-html/module4-advanced-14-2.png)](https://yulab-smu.top/icare/module4-advanced.html)
+[![Validation-set KM with the training-derived cutoff](http://yulab-smu.top/icare/module4-advanced_files/figure-html/module4-advanced-14-6.png)](https://yulab-smu.top/icare/module4-advanced.html)
+[![Subgroup forest plot](http://yulab-smu.top/icare/module4-advanced_files/figure-html/module4-advanced-14-7.png)](https://yulab-smu.top/icare/module4-advanced.html)
+[![Feature-selection stability across resamples](http://yulab-smu.top/icare/module4-advanced_files/figure-html/module4-advanced-15-1.png)](https://yulab-smu.top/icare/module4-advanced.html)
+[![Feature-ablation robustness check](http://yulab-smu.top/icare/module4-advanced_files/figure-html/module4-advanced-15-2.png)](https://yulab-smu.top/icare/module4-advanced.html)
 
 Strict train/validation split, algorithm benchmarking, subgroup forests, time-dependent AUC, calibration, nomograms, stability/ablation checks, DCA, and survival SHAP. → [Advanced chapter](https://yulab-smu.top/icare/module4-advanced.html)
 
@@ -202,7 +224,7 @@ installed separately first with `BiocManager::install()`.
 ## The four modules
 
 | # | Module | S4 object | What it does |
-|---|--------|-----------|---------------|
+| --- | --- | --- | --- |
 | 1 | **Data cleaning** | `Stat` | Type detection, missing-value imputation, outlier handling, one-hot encoding, normalization, differential-feature testing, baseline ("Table 1") reports |
 | 2 | **Modeling** | `Train_Model` | Feature selection (RFE/GA/SA/built-in importance), train/test split, multi-algorithm benchmarking via `caret`, ensembling, hyperparameter tuning, SHAP/DALEX explainability, clinical thresholds & NRI/IDI |
 | 3 | **Subtyping** | `Subtyping` | Unsupervised clustering (K-means, NMF, latent profile analysis), cluster validation & cross-method agreement, marker-feature discovery, t-SNE/UMAP visualization |
@@ -252,7 +274,7 @@ saveRDS(stat_obj, "stat_obj.rds")
 ```
 
 | Command | Purpose |
-|---|---|
+| --- | --- |
 | `CreateStatObject()` | Wrap a raw data matrix + metadata into a `Stat` object |
 | `InspectObject()` | Print a structured summary of any icare S4 object |
 | `stat_diagnose_variable_type()` / `stat_convert_variables()` | Detect and coerce numeric vs. categorical columns |
@@ -299,7 +321,7 @@ deploy_clinlab_app(deploy_manager)
 ```
 
 | Command | Purpose |
-|---|---|
+| --- | --- |
 | `ConvertObject(x, to = "Train_Model")` | Turn a cleaned `Stat` object into a modeling object |
 | `FeatureSelectBuiltin()` / `FeatureSelectionPipeline()` (`ga`/`rfe`/`sa`) / `run_feature_elimination()` | Feature selection: built-in importance, GA/RFE/SA, or performance-elbow elimination |
 | `ApplyFeatureSelection()` | Commit to a final feature set |
@@ -346,7 +368,7 @@ launch_sub_deploy_app(sub_manager)
 ```
 
 | Command | Purpose |
-|---|---|
+| --- | --- |
 | `ConvertObject(x, to = "Subtyping")` | Turn a cleaned `Stat` object into a subtyping object |
 | `Sub_normalize_process()` / `Sub_extract_norm_params()` / `Sub_apply_norm_params()` | Fit normalization on training data and replay it on validation/new data |
 | `SplitSubtypingObject()` | Stratified train/validation split for cluster validation |
@@ -396,7 +418,7 @@ launch_prog_deploy_app(prog_manager)
 ```
 
 | Command | Purpose |
-|---|---|
+| --- | --- |
 | `Stat_to_PrognosiX()` | Convert a `Stat` object into a survival-modeling (`PrognosiX`) object |
 | `surv_feature_selection_multi()` | Univariate Cox / LASSO feature selection (`combine = "union"`/`"intersect"`) |
 | `surv_extract_task()` | Build an `mlr3proba::TaskSurv` from a `PrognosiX` object |
@@ -452,13 +474,13 @@ scripts are rendered with output and figures at
 
 - Full documentation & worked examples: **[yulab-smu.top/icare](https://yulab-smu.top/icare/)**
 - Function-level help: `?FunctionName` inside R, or `InspectObject(x)` to
-  inspect any icare S4 object's current state.
+inspect any icare S4 object's current state.
 - Bug reports and feature requests: please open a
-  [GitHub issue](https://github.com/YuLab-SMU/icare/issues) with a minimal reproducible example.
+[GitHub issue](https://github.com/YuLab-SMU/icare/issues) with a minimal reproducible example.
 
 ## Citation
 
-```
+```javascript
 Luo H, Long F, Lin H, Yuan C, Wang F, Huang J, Yu G. icare: Intelligent
 ClinlAbomics Research Expedition. R package version 1.0.1.
 ```
