@@ -77,7 +77,7 @@ patients at prediction time.
 
 ## See icare in action
 
-Real output from the QUICKSTART vignettes on real clinical/omics data — click any figure to open the full walkthrough that produced it. The example dataset used throughout Modules 1, 2, and 4 ships with the package at `icare/inst/extdata/PMID37633276_DIA_plasmaproomic.xlsx`.
+Real output from the QUICKSTART vignettes on real clinical/omics data — click any figure to open the full walkthrough that produced it. The example dataset used throughout Modules 1, 2，3, and 4 ships with the package at `icare/inst/extdata/PMID37633276_DIA_plasmaproomic.xlsx`.
 
 <table>
 <tr>
