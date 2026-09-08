@@ -13,6 +13,8 @@ survival modeling — each with an interactive Shiny deployment layer.
 [![License: GPL-3](https://img.shields.io/badge/License-GPL--3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
 ![R](https://img.shields.io/badge/R-%3E%3D3.5.0-276DC3?logo=r)
 ![Status](https://img.shields.io/badge/status-active--development-yellow)
+[![Docs](https://img.shields.io/badge/docs-tutorial%20site-orange)](https://yulab-smu.top/icare/)
+[![Source](https://img.shields.io/badge/source-GitHub-181717?logo=github)](https://github.com/YuLab-SMU/icare)
 
 **Maintainer:** Huaichao Luo (luohc@uestc.edu.cn) —
 [Google Scholar](https://scholar.google.com/citations?user=XNKOGaIAAAAJ) |
@@ -21,11 +23,14 @@ survival modeling — each with an interactive Shiny deployment layer.
 
 **Contributor:** Guangchuang Yu — [Lab website (yulab-smu.top)](https://yulab-smu.top)
 
+📖 **Full tutorial & documentation:** **[yulab-smu.top/icare](https://yulab-smu.top/icare/)**
+
 ---
 
 ## Contents
 
 - [Overview](#overview)
+- [See icare in action](#see-icare-in-action)
 - [Installation](#installation)
 - [The four modules](#the-four-modules)
 - [Essential Commands](#essential-commands)
@@ -68,11 +73,123 @@ values, scaling parameters, selected features, trained models) inside the
 object itself, so the *exact same* transformation can be replayed on new
 patients at prediction time.
 
+---
+
+## See icare in action
+
+Real output from the QUICKSTART vignettes on real clinical/omics data — click any figure to open the full walkthrough that produced it. The example dataset used throughout Modules 1, 2, and 4 ships with the package at `icare/inst/extdata/PMID37633276_DIA_plasmaproomic.xlsx`.
+
+<table>
+<tr>
+<td width="50%" valign="top">
+
+**Module 1 · Data cleaning & exploration**
+
+[![Grouped distribution plot](http://yulab-smu.top/icare/module1-quickstart_files/figure-html/module1-quickstart-05-1.png)](https://yulab-smu.top/icare/module1-quickstart.html)
+[![PCA plot](http://yulab-smu.top/icare/module1-quickstart_files/figure-html/module1-quickstart-05-2.png)](https://yulab-smu.top/icare/module1-quickstart.html)
+
+Group-wise distributions and PCA ordination, straight out of `PlotGroupedDistribution()` / `PlotPCA()`. → [Quick-start chapter](https://yulab-smu.top/icare/module1-quickstart.html)
+
+</td>
+<td width="50%" valign="top">
+
+**Module 2 · Classification modeling**
+
+[![Cross-validation performance](http://yulab-smu.top/icare/module2-quickstart_files/figure-html/module2-quickstart-05-1.png)](https://yulab-smu.top/icare/module2-quickstart.html)
+[![Multi-model ROC curves](http://yulab-smu.top/icare/module2-quickstart_files/figure-html/module2-quickstart-06-1.png)](https://yulab-smu.top/icare/module2-quickstart.html)
+
+`glmnet` / `rf` / `gbm` benchmarked head-to-head, then the winner's ROC via `PlotMultiROC()`. → [Quick-start chapter](https://yulab-smu.top/icare/module2-quickstart.html)
+
+</td>
+</tr>
+<tr>
+<td width="50%" valign="top">
+
+**Module 3 · Unsupervised subtyping**
+
+[![NMF consensus / rank selection](http://yulab-smu.top/icare/module3-quickstart_files/figure-html/module3-quickstart-03-1.png)](https://yulab-smu.top/icare/module3-quickstart.html)
+[![t-SNE subtype visualization](http://yulab-smu.top/icare/module3-quickstart_files/figure-html/module3-quickstart-04-1.png)](https://yulab-smu.top/icare/module3-quickstart.html)
+
+NMF rank estimation and the resulting t-SNE embedding, colored by subtype. → [Quick-start chapter](https://yulab-smu.top/icare/module3-quickstart.html)
+
+</td>
+<td width="50%" valign="top">
+
+**Module 4 · Survival & prognosis**
+
+[![Kaplan-Meier risk stratification, training set](http://yulab-smu.top/icare/module4-quickstart_files/figure-html/module4-quickstart-08-1.png)](https://yulab-smu.top/icare/module4-quickstart.html)
+[![Kaplan-Meier risk stratification, validation set](http://yulab-smu.top/icare/module4-quickstart_files/figure-html/module4-quickstart-08-3.png)](https://yulab-smu.top/icare/module4-quickstart.html)
+
+Median-split Kaplan–Meier curves from `surv_plot_risk_km()`, training vs. held-out validation. → [Quick-start chapter](https://yulab-smu.top/icare/module4-quickstart.html)
+
+</td>
+</tr>
+</table>
+
+👉 Every chapter above (and their **ADVANCED** counterparts) is runnable end-to-end in the [online book](https://yulab-smu.top/icare/) — code, console output, and figures are shown together, chunk by chunk.
+
+---
+
+## Go further: the ADVANCED gallery
+
+The QUICKSTART chapters get you a result in minutes — the **ADVANCED** chapters are where icare earns its keep for a manuscript: multi-method feature selection with consensus/stability diagnostics, algorithm benchmarking with SHAP/DALEX explanations, three-way clustering validation, and full survival-model robustness/DCA/nomogram workflows. A taste of what each one produces:
+
+<table>
+<tr>
+<td width="50%" valign="top">
+
+**Module 1 · Advanced — publication figures**
+
+[![PCA with confidence ellipses, publication style](http://yulab-smu.top/icare/module1-advanced_files/figure-html/module1-advanced-14-1.png)](https://yulab-smu.top/icare/module1-advanced.html)
+[![Top-DEG feature heatmap with clinical annotation](http://yulab-smu.top/icare/module1-advanced_files/figure-html/module1-advanced-17-2.png)](https://yulab-smu.top/icare/module1-advanced.html)
+
+Correlation heatmaps, annotated PCA, AUC/p-value feature triage, radar charts, and a manuscript-ready "Table 1" — all in one script. → [Advanced chapter](https://yulab-smu.top/icare/module1-advanced.html)
+
+</td>
+<td width="50%" valign="top">
+
+**Module 2 · Advanced — benchmarking & explainability**
+
+[![RFE feature-selection profile plot](http://yulab-smu.top/icare/module2-advanced_files/figure-html/module2-advanced-15-1.png)](https://yulab-smu.top/icare/module2-advanced.html)
+[![Top model AUC comparison across algorithms](http://yulab-smu.top/icare/module2-advanced_files/figure-html/module2-advanced-19-1.png)](https://yulab-smu.top/icare/module2-advanced.html)
+
+RFE/GA/SA consensus feature selection, a 9-algorithm benchmark, ensembling, Bayesian tuning, and SHAP/DALEX explanations. → [Advanced chapter](https://yulab-smu.top/icare/module2-advanced.html)
+
+</td>
+</tr>
+<tr>
+<td width="50%" valign="top">
+
+**Module 3 · Advanced — three-way clustering validation**
+
+[![K-means and LPA clustering diagnostics](http://yulab-smu.top/icare/module3-advanced_files/figure-html/module3-advanced-13-1.png)](https://yulab-smu.top/icare/module3-advanced.html)
+[![t-SNE embedding colored by LPA subtype](http://yulab-smu.top/icare/module3-advanced_files/figure-html/module3-advanced-19-1.png)](https://yulab-smu.top/icare/module3-advanced.html)
+
+K-means, LPA, and NMF cross-validated against each other (Adjusted Rand Index), with marker heatmaps, silhouettes, and an alluvial agreement diagram. → [Advanced chapter](https://yulab-smu.top/icare/module3-advanced.html)
+
+</td>
+<td width="50%" valign="top">
+
+**Module 4 · Advanced — robust survival modeling**
+
+[![Kaplan-Meier median-split risk stratification](http://yulab-smu.top/icare/module4-advanced_files/figure-html/module4-advanced-14-1.png)](https://yulab-smu.top/icare/module4-advanced.html)
+[![Feature-selection stability plot across resamples](http://yulab-smu.top/icare/module4-advanced_files/figure-html/module4-advanced-15-1.png)](https://yulab-smu.top/icare/module4-advanced.html)
+
+Strict train/validation split, algorithm benchmarking, subgroup forests, time-dependent AUC, calibration, nomograms, stability/ablation checks, DCA, and survival SHAP. → [Advanced chapter](https://yulab-smu.top/icare/module4-advanced.html)
+
+</td>
+</tr>
+</table>
+
+Every advanced script is designed to be run start-to-finish on your own cohort — swap in your data at the top of the `CONFIG` section and the rest of the pipeline (feature selection → modeling/clustering/survival → explainability → export) follows automatically.
+
+---
+
 ## Installation
 
 ```r
 # install.packages("remotes")
-remotes::install_github("<your-org>/icare")
+remotes::install_github("YuLab-SMU/icare", dependencies = TRUE)
 ```
 
 icare depends on a large number of Bioconductor/CRAN packages (`caret`,
@@ -94,7 +211,8 @@ installed separately first with `BiocManager::install()`.
 Each module ships with a **QUICKSTART** vignette (minimal, sensible
 defaults) and an **ADVANCED** vignette (every option, publication-style
 figures) under `vignettes/` — start there for runnable, end-to-end
-examples on real data.
+examples on real data. The same chapters are also published as a
+browsable book at **[yulab-smu.top/icare](https://yulab-smu.top/icare/)**.
 
 ---
 
@@ -326,22 +444,25 @@ Each QUICKSTART script points to its ADVANCED counterpart for the full
 option set (multi-method feature selection, ensembling, tuning,
 SHAP/DALEX explanations, clinical thresholds & NRI/IDI, cluster
 cross-validation, survival benchmarking, decision-curve analysis, and
-the Shiny deployment apps).
+the Shiny deployment apps). Prefer to read rather than run? The same
+scripts are rendered with output and figures at
+**[yulab-smu.top/icare](https://yulab-smu.top/icare/)**.
 
 ## Getting help
 
+- Full documentation & worked examples: **[yulab-smu.top/icare](https://yulab-smu.top/icare/)**
 - Function-level help: `?FunctionName` inside R, or `InspectObject(x)` to
   inspect any icare S4 object's current state.
 - Bug reports and feature requests: please open a
-  [GitHub issue](../../issues) with a minimal reproducible example.
+  [GitHub issue](https://github.com/YuLab-SMU/icare/issues) with a minimal reproducible example.
 
 ## Citation
 
 ```
-Luo H,Long F,Lin H,Jian H,Yu G. icare: Intelligent ClinlAbomics Research
-Expedition. R package version 1.0.0.
+Luo H, Long F, Lin H, Yuan C, Wang F, Huang J, Yu G. icare: Intelligent
+ClinlAbomics Research Expedition. R package version 1.0.1.
 ```
 
 ## License
 
-GPL-3 © Huaichao Luo,Fei Long, Hongyan Lin,Jian Huang,Guangchuang Yu
+GPL-3 © Huaichao Luo, Fei Long, Hongyan Lin, Jian Huang, Guangchuang Yu
